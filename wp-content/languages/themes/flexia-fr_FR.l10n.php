@@ -1,0 +1,2 @@
+<?php
+return ['x-generator'=>'GlotPress/4.0.1','translation-revision-date'=>'2021-03-02 10:28:28+0000','plural-forms'=>'nplurals=2; plural=n > 1;','project-id-version'=>'Themes - Flexia','language'=>'fr','messages'=>['Flexia'=>'Flexia','https://wpdeveloper.net'=>'https://wpdeveloper.net','WPDeveloper'=>'WPDeveloper','https://flexia.pro'=>'https://flexia.pro']];

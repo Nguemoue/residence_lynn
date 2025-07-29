@@ -2,13 +2,13 @@
 
 return [
     'default_currency' => env('DEFAULT_CURRENCY', \App\Payments\Enums\Currency::XAF->value),
-    'promotional_text' => "🎁 Livraison offerte dès 49€ d’achat · Paiement sécurisé · Retour gratuit sous 30 jours ·Satisfait ou remboursé",
+    'promotional_text' => "📆 Dates flexibles · Confirmation immédiate · Réservation sans stress",
     'about' => [
-        'name' => 'Noveden',
+        'name' => 'Residence Lynn',
         'phone_number' => '+32 465 73 74 12',
-        'email' => 'contact@noveden.com',
-        'support' => 'support@noveden.com',
-        'address' => 'Belgique',
+        'email' => 'contact@residencelynn.com',
+        'support' => 'support@residencelynn.com',
+        'address' => 'Kribi, Cameroun',
         'company_number' => "1010723370"
     ],
 

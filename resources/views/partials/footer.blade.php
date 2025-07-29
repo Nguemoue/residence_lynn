@@ -59,9 +59,6 @@
                     <a href="{{ whatsappUrl() }}" class="hover:text-primary">@svg('icon-whatsapp','w-6 h-6')</a>
                     <a href="{{ app(\App\Settings\GeneralSetting::class)->instagramUrl }}" class="hover:text-primary">@svg('icon-instagram','w-6 h-6')</a>
                 </div>
-                <div class="mt-4 bg-primary text-white p-3 rounded-md text-sm">
-                    🎁 5% de réduction sur votre première réservation avec le code <b>K-RIBI5</b> !
-                </div>
             </div>
         </div>
 

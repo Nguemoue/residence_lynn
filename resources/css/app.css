@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: Inter,'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@plugin "daisyui";
+
+
+@plugin "daisyui/theme" {
+    name: light;
+    default: true;
+    prefersdark: false;
+    color-scheme: light;
+
+    /* ---- Palette Noveden (OKLCH) ---- */
+    --color-base-100:      oklch(99% 0.004 0.584);   /* #F1ECE2 */
+    --color-base-150:      oklch(0% 0.014 80.584);   /* #F1ECE2 */
+    --color-base-200:      oklch(90% 0.019 83.063);   /* #E3DCCF */
+    --color-base-300:      oklch(84% 0.025 85.794);   /* #D1C9B8 */
+    --color-base-content:  oklch(28% 0.030 256.848);  /* #1F2937 */
+
+    --color-primary:       oklch(48% 0.086 156.301);  /* Vert profond #2F6D4A */
+    --color-primary-content: oklch(99% 0.000 0);      /* Blanc */
+
+    --color-secondary:     oklch(74% 0.056 123.806);  /* Olive doux #A4B28B */
+    --color-secondary-content: oklch(26% 0.079 36.259); /* Texte foncé */
+
+    --color-accent:        oklch(52% 0.067 149.234);  /* Vert mousse #4C7353 */
+    --color-accent-content:  oklch(99% 0.000 0);      /* Blanc */
+
+    --color-neutral:       oklch(57% 0.086  62.208);  /* Brun naturel #9B6B3F */
+    --color-neutral-content: oklch(99% 0.000 0);      /* Blanc */
+
+    /* Couleurs système laissées telles quelles (tu peux les ajuster si besoin) */
+    --color-info:    oklch(74% 0.160 232.661);
+    --color-info-content:   oklch(29% 0.066 243.157);
+    --color-success: oklch(76% 0.177 163.223);
+    --color-success-content: oklch(26% 0.051 172.552);
+    --color-warning: oklch(85% 0.199  91.936);
+    --color-warning-content: oklch(28% 0.066  53.813);
+    --color-error:   oklch(70% 0.191  22.216);
+    --color-error-content:   oklch(25% 0.092  26.042);
+
+    /* ---- Propriétés inchangées ---- */
+    --radius-selector: .5rem;
+    --radius-field: 0.5rem;
+    --radius-box: .5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1.2;
+    --noise: 1;
+}
+@layer utilities {
+    @keyframes marquee {
+        0%   { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    .animate-marquee {
+        animation: marquee 20s linear infinite;
+    }
+    .animate-marquee:hover {
+        animation-play-state: paused;
+    }
+}

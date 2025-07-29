@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\{
     HomeController,
-    CategoryController,
-    ProductController,
+    AccommodationTypeController,
+    AccommodationController,
     CartController,
     CheckoutController,
     OrderController,
@@ -25,27 +25,26 @@ use App\Http\Controllers\Frontend\{
 /* Home */
 Route::get('/', HomeController::class)->name('home');
 
-/* Catégories & Produits -------------------------------------------------- */
-Route::prefix('categories')->group(function () {
-    Route::get('/',              [CategoryController::class, 'index'])->name('categories.index');
-    Route::get('{category:slug}',[CategoryController::class, 'show' ])->name('categories.show');
+/* Accomodations types and accomodations -------------------------------------------------- */
+Route::prefix('accommodations_types')->middleware([
+    \App\Http\Middleware\InjectValidationErrorsIntoFlasherMiddleware::class
+])->group(function () {
+    Route::get('/',              [AccommodationTypeController::class, 'index'])->name('accommodation_types.index');
+    Route::get('{accommodationType:slug}',[AccommodationTypeController::class, 'show' ])->name('accommodation_types.show');
 });
 
-Route::prefix('products')->group(function () {
-    Route::get('/',             [ProductController::class, 'index'])->name('products.index');
-    Route::get('{product:slug}',[ProductController::class, 'show' ])->name('products.show');
+Route::prefix('accommodations')->group(function () {
+    Route::get('/',             [AccommodationController::class, 'index'])->name('accommodations.index');
+    Route::get('{accommodation:slug}',[AccommodationController::class, 'show' ])->name('accommodations.show');
 });
 
-/* Panier --------------------------------------------------------------- */
-Route::prefix('cart')->controller(CartController::class)->group(function () {
-    Route::get('/',   'show')->name('cart.show');
-});
 
 /* Passage en caisse ---------------------------------------------------- */
 Route::middleware([
     \App\Http\Middleware\InjectValidationErrorsIntoFlasherMiddleware::class
 ])->group(function (){
-    Route::get('checkout',  [CheckoutController::class, 'show' ])->name('checkout.show');
+    Route::get("bookings/{booking}", \App\Http\Controllers\Frontend\BookingController::class)->name("bookings.show");
+    Route::delete("bookings/{booking}", \App\Http\Controllers\Frontend\BookingController::class)->name("bookings.cancel");
     Route::post('checkout', [CheckoutController::class, 'store'])->name('checkout.store');
     Route::get('checkout/actions/success',\App\Http\Controllers\Frontend\CheckoutActionSuccessController::class)->name('checkout.success');
     Route::get('checkout/actions/cancel',\App\Http\Controllers\Frontend\CheckoutActionCancelController::class)->name('checkout.cancel');
@@ -53,11 +52,10 @@ Route::middleware([
 });
 
 /* Suivi de commande (UUID public) ------------------------------------- */
-Route::get('orders/{order:uuid}', [OrderController::class, 'show'])
-    ->name('orders.track');
+Route::get('orders/{order:uuid}', [OrderController::class, 'show'])->name('orders.track');
 
 /* Telechargement du PDF*/
-Route::get('/orders/{order:uuid}/pdf', \App\Http\Controllers\Frontend\DownloadOrderPdfController::class)->name('orders.pdf');
+Route::get('/booking/{booking:uuid}/pdf', \App\Http\Controllers\Frontend\DownloadOrderPdfController::class)->name('orders.pdf');
 
 /* Blog ----------------------------------------------------------------- */
 Route::prefix('blog')->group(function () {
@@ -67,7 +65,8 @@ Route::prefix('blog')->group(function () {
 
 /* FAQ ------------------------------------------------------------------ */
 Route::get('faq', FaqController::class)->name('faq.index');
-
+# Gallery
+Route::get("gallery", \App\Http\Controllers\Frontend\GalleryController::class)->name("gallery.index");
 /* Newsletter ----------------------------------------------------------- */
 Route::post('newsletter', [NewsletterController::class, 'store'])->name('newsletter.store');
 

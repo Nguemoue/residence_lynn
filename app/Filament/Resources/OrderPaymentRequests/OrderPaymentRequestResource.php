@@ -21,7 +21,7 @@ class OrderPaymentRequestResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static string|UnitEnum|null $navigationGroup = FilamentNavigationGroupEnum::ORDER;
+    protected static string|UnitEnum|null $navigationGroup = FilamentNavigationGroupEnum::BOOKING;
 
 
     public static function getNavigationLabel(): string

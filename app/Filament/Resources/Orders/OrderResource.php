@@ -23,7 +23,7 @@ class OrderResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::CurrencyDollar;
 
-    protected static string|UnitEnum|null $navigationGroup = FilamentNavigationGroupEnum::ORDER;
+    protected static string|UnitEnum|null $navigationGroup = FilamentNavigationGroupEnum::BOOKING;
 
 
     public static function getNavigationLabel(): string

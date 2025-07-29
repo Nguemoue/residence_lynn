@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'default_currency' => env('DEFAULT_CURRENCY', \App\Payments\Enums\Currency::EUR->value),
+    'default_currency' => env('DEFAULT_CURRENCY', \App\Payments\Enums\Currency::XAF->value),
     'promotional_text' => "🎁 Livraison offerte dès 49€ d’achat · Paiement sécurisé · Retour gratuit sous 30 jours ·Satisfait ou remboursé",
     'about' => [
         'name' => 'Noveden',
@@ -58,9 +58,39 @@ return [
         ],
     ],
 
+    'accommodation_types'=>[
+        [
+            'name' => "Appartement",
+            'price_per_night'=>80000,
+            'description' => "Un appartement est un logement autonome situé dans un immeuble résidentiel, offrant une indépendance relative tout en bénéficiant des services partagés (ascenseur, gardiennage, etc.).",
+            'is_available'=>true
+        ],
+        [
+            'name' => "Studio",
+            'price_per_night'=>40000,
+            'description' => "Une maison est un logement autonome situé sur un terrain, offrant une indépendance totale et souvent un jardin ou une cour. Elle peut être une propriété ou une résidence secondaire.",
+            'is_available'=>true
+        ],
+        [
+            'name' => "Chambre",
+            'price_per_night'=>20000,
+            'description' => "Une maison est un logement autonome situé sur un terrain, offrant une indépendance totale et souvent un jardin ou une cour. Elle peut être une propriété ou une résidence secondaire.",
+            'is_available'=>true
+        ],
+    ],
     'powered_by'=>[
         'company_name'=>"GoulBam Enterprises",
         "link"=>"https://goulbam.com"
+    ],
+    'services'=>[
+        ['name' => 'Piscine', 'description' => 'Piscine extérieure pour détente et loisirs', 'cover_image' => 'piscine.jpg'],
+        ['name' => 'Jardin', 'description' => 'Jardin paysager idéal pour se relaxer', 'cover_image' => 'jardin.jpg'],
+        ['name' => 'Restaurant ouvert', 'description' => 'Restaurant accessible aux résidents et visiteurs', 'cover_image' => 'restaurant.jpg'],
+        ['name' => 'Connexion Wi-Fi offerte', 'description' => 'Internet haut débit disponible gratuitement', 'cover_image' => 'wifi.jpg'],
+        ['name' => 'Parking sécurisé', 'description' => 'Espace de stationnement protégé pour véhicules', 'cover_image' => 'parking.jpg'],
+        ['name' => 'Groupe électrogène', 'description' => 'Système de secours pour l’alimentation électrique', 'cover_image' => 'generateur.jpg'],
+        ['name' => 'Forage', 'description' => 'Approvisionnement autonome en eau potable', 'cover_image' => 'forage.jpg'],
+        ['name' => 'Blanchisserie', 'description' => 'Service de nettoyage et entretien du linge', 'cover_image' => 'blanchisserie.jpg'],
     ]
 
 ];

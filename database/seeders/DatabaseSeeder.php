@@ -4,17 +4,12 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Enums\StockTypeEnum;
 use App\Models\Admin;
-use App\Models\Category;
 use App\Models\Faq;
-use App\Models\Order;
-use App\Models\OrderItem;
 use App\Models\Post;
 use App\Models\PostCategory;
-use App\Models\Product;
 use App\Models\Subscriber;
-use App\Models\User;
+use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -26,28 +21,38 @@ final class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-// 30 tags
-        \App\Models\Tag::factory()->count(5)->create();
-        // Catégories & Produits
-        Category::factory(2)->create()->each(
-            fn (Category $cat) => Product::factory(1)->create(['category_id' => $cat->id,'stock_type' => StockTypeEnum::UNLIMITED])
-        );
 
-        // Blog
-        PostCategory::factory(3)->create()->each(
-            fn ($c) => Post::factory(1)->create([
-                'post_category_id' => $c->id,
-            ])
-        );
+        if (Tag::count() === 0) {
+            \App\Models\Tag::factory()->count(5)->create();
+        }
 
-        // FAQ, Newsletter
-        Faq::factory(3)->create();
-        Subscriber::factory(1)->create();
+        if (PostCategory::count() === 0) {
+            PostCategory::factory(3)->create()->each(
+                fn ($c) => Post::factory(1)->create([
+                    'post_category_id' => $c->id,
+                ])
+            );
+        }
+        if (Faq::count() === 0){
+            Faq::factory(3)->create();
+        }
+
+        if (Subscriber::count() === 0) {
+            Subscriber::factory(1)->create();
+        }
+        //
         Admin::updateOrCreate([
             'email'=>'admin@gmail.com'
         ],[
             'password'=>bcrypt('password'),
             'name'=>"Admin"
         ]);
+
+        //seed accomodation type seeder
+        $this->call(ServiceSeeder::class);
+        $this->call(TestimonialsSeeder::class);
+        // must be came after service seeder
+        $this->call(AccommodationTypeSeeder::class);
+
     }
 }

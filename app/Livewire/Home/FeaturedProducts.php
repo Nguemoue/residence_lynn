@@ -3,10 +3,9 @@ declare(strict_types=1);
 
 namespace App\Livewire\Home;
 
-use App\Enums\StockTypeEnum;
+use App\Domain\Services\CartService;
 use App\Models\Category;
 use App\Models\Product;
-use App\Domain\Services\CartService;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 

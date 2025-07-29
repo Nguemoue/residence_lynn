@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Providers\Filament;
 
+use App\Domain\Constants\Color as AppColor;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -26,16 +27,19 @@ final class AdminPanelProvider extends PanelProvider
 
     public function panel(Panel $panel): Panel
     {
-        $logoUrl = asset('assets/images/logo_noveden.png');
+        $logoUrl = asset('assets/images/logo.png');
         return $panel
             ->default()
             ->id('admin')
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Zinc,
+                'primary' => Color::Amber,
             ])
-            ->brandName(str("<img src=\"$logoUrl\" alt=\"logo\" style='max-width: 10rem;height: auto'/> ")->toHtmlString())
+            ->brandName(str("
+             <span style='display: flex;gap: 2px;align-items: center'>
+             <img src=\"$logoUrl\" alt=\"logo\" style='max-width:60px;height: auto'/> <span> Residence Lynn</span> </span>
+             ")->toHtmlString())
             ->brandLogoHeight("auto")
             ->profile()
             ->databaseNotifications()
@@ -60,6 +64,7 @@ final class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
+            ->topNavigation()
             ->registration()
             ->authGuard('admin')
             ->authMiddleware([

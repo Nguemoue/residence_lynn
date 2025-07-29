@@ -39,12 +39,12 @@ class Dashboard extends BaseDashboard
     public function getWidgets(): array
     {
         return [
-            ProductStats::class,
+            //ProductStats::class,
             PostStats::class,
-            OrderStats::class,
+            //OrderStats::class,
             ContactStats::class,
             TagStats::class,
-            RecentOrdersTable::class,
+            //RecentOrdersTable::class,
         ];
     }
 

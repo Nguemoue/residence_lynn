@@ -3,14 +3,13 @@ declare(strict_types=1);
 
 namespace App\Livewire;
 
-use App\Enums\StockTypeEnum;
+use App\Domain\Services\CartService;
+use App\Models\Category;
+use App\Models\Product;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
-use App\Models\Category;
-use App\Models\Product;
-use App\Domain\Services\CartService;
 
 class ProductsGrid extends Component
 {

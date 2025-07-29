@@ -3,13 +3,11 @@ declare(strict_types=1);
 
 namespace App\Listeners;
 
-use App\Enums\StockTypeEnum;
 use App\Events\Payment\OrderCreateEvent;
 use App\Exceptions\StockDecrementException;
-use App\Models\Product;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Listener for OrderPaidEvent to decrement product stock quantities.

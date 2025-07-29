@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Livewire\Cart;
 
 use App\Domain\Services\CartService;
-use App\Enums\StockTypeEnum;
 use App\Models\Product;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Validator;

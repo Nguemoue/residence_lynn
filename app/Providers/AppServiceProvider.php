@@ -28,7 +28,7 @@ final class AppServiceProvider extends ServiceProvider
 
     private function configureCurrency()
     {
-        Number::useCurrency(currency: "EUR");
+        Number::useCurrency(currency: "XAF");
         Number::useLocale("fr_FR");
     }
 }

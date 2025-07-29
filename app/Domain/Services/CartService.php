@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace App\Domain\Services;
 
-use App\Enums\StockTypeEnum;
 use App\Exceptions\CartItemNotFoundException;
 use App\Exceptions\InvalidCartException;
 use App\Models\Product;

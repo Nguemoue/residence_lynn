@@ -4,9 +4,9 @@ namespace App\Domain\Enums;
 
 enum FilamentNavigationGroupEnum: string
 {
-    case PRODUCTS = 'Produits';
+    case ACCOMMODATION = 'Accommodations';
     case BLOG = 'Blogs';
-    case ORDER = 'Commandes';
+    case BOOKING = 'Bookings';
 
     case ADMINISTRATION = 'administration';
 

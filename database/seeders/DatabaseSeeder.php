@@ -53,6 +53,8 @@ final class DatabaseSeeder extends Seeder
         $this->call(TestimonialsSeeder::class);
         // must be came after service seeder
         $this->call(AccommodationTypeSeeder::class);
+        // must be came after accommodation type seeder
+        $this->call(AccommodationSeeder::class);
 
     }
 }

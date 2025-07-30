@@ -129,7 +129,7 @@
                                                 <h5 class="text-lg font-semibold">{{ $accommodation->code }}</h5>
                                                 <p class="text-sm opacity-80">{!!   $accommodation->description !!}</p>
                                                 <p class="text-sm font-semibold mt-2">
-                                                    Prix : {{ $accommodation->price_per_night }} XAF/nuit
+                                                    Prix : {{ $accommodation->accommodationType->price_per_night }} XAF/nuit
                                                 </p>
                                             </div>
                                         </div>

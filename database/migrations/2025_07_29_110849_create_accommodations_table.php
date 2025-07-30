@@ -12,11 +12,10 @@ return new class extends Migration {
         Schema::create('accommodations', function (Blueprint $table) {
             $table->id();
             $table->string('code')->unique();
-            $table->foreignId('accommodation_type_id')->constrained('accommodation_types');
-            $table->float('price_per_night')->nullable();
-            $table->string("cover_image")->nullable();
-            $table->boolean('is_available');
             $table->text("description")->nullable();
+            $table->foreignId('accommodation_type_id')->constrained('accommodation_types');
+            $table->string("cover_image")->nullable();
+            $table->boolean('is_available')->default(true);
             $table->json('gallery')->nullable();
             $table->json('amenities')->nullable();
             $table->timestamps();

@@ -23,16 +23,13 @@ class TestimonialResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static string|null|\UnitEnum $navigationGroup = FilamentNavigationGroupEnum::ADMINISTRATION;
+    protected static string|null|\UnitEnum $navigationGroup = FilamentNavigationGroupEnum::Administration;
     public static function form(Schema $schema): Schema
     {
         return TestimonialForm::configure($schema);
     }
 
-    public static function infolist(Schema $schema): Schema
-    {
-        return TestimonialInfolist::configure($schema);
-    }
+
 
     public static function table(Table $table): Table
     {
@@ -50,9 +47,6 @@ class TestimonialResource extends Resource
     {
         return [
             'index' => ListTestimonials::route('/'),
-            'create' => CreateTestimonial::route('/create'),
-            'view' => ViewTestimonial::route('/{record}'),
-            'edit' => EditTestimonial::route('/{record}/edit'),
         ];
     }
 }

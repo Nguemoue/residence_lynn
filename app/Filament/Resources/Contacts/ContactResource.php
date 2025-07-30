@@ -21,7 +21,7 @@ class ContactResource extends Resource
     protected static ?string $model = Contact::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::Phone;
-    protected static string | UnitEnum | null $navigationGroup = FilamentNavigationGroupEnum::ADMINISTRATION;
+    protected static string | UnitEnum | null $navigationGroup = FilamentNavigationGroupEnum::Administration;
 
     public static function getNavigationLabel(): string
     {

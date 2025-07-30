@@ -12,8 +12,10 @@ class AccommodationType extends Model
     protected function casts(): array
     {
         return [
+            'gallery'=>'array',
             'price_per_night' => 'float',
             'is_available' => 'boolean',
+            'amenities' => 'array'
         ];
     }
 

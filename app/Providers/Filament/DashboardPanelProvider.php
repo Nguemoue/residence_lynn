@@ -41,6 +41,8 @@ class DashboardPanelProvider extends PanelProvider
             ->widgets([
 
             ])
+            ->profile()
+            ->topNavigation()
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

@@ -24,7 +24,7 @@ class ServiceResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static string | UnitEnum | null $navigationGroup = FilamentNavigationGroupEnum::ADMINISTRATION;
+    protected static string | UnitEnum | null $navigationGroup = FilamentNavigationGroupEnum::Administration;
 
     public static function form(Schema $schema): Schema
     {
@@ -52,9 +52,6 @@ class ServiceResource extends Resource
     {
         return [
             'index' => ListServices::route('/'),
-            'create' => CreateService::route('/create'),
-            'view' => ViewService::route('/{record}'),
-            'edit' => EditService::route('/{record}/edit'),
         ];
     }
 }

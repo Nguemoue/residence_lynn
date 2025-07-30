@@ -4,10 +4,10 @@ namespace App\Domain\Enums;
 
 enum FilamentNavigationGroupEnum: string
 {
-    case ACCOMMODATION = 'Accommodations';
-    case BLOG = 'Blogs';
-    case BOOKING = 'Bookings';
+    case Reservation = 'Accommodations';
+    case Blog = 'Blogs';
+    case Booking = 'Bookings';
 
-    case ADMINISTRATION = 'administration';
+    case Administration = 'administration';
 
 }

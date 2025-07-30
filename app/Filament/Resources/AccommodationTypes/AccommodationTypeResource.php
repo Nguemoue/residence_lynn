@@ -22,17 +22,20 @@ class AccommodationTypeResource extends Resource
     protected static ?string $model = AccommodationType::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-    protected static string|null|\UnitEnum $navigationGroup = FilamentNavigationGroupEnum::ACCOMMODATION;
+    protected static string|null|\UnitEnum $navigationGroup = FilamentNavigationGroupEnum::Reservation;
+
+    protected static ?string $label = "Type de logement";
+    protected static ?string $pluralLabel = "Types de logements";
 
     public static function form(Schema $schema): Schema
     {
         return AccommodationTypeForm::configure($schema);
     }
 
-    public static function infolist(Schema $schema): Schema
+    /*public static function infolist(Schema $schema): Schema
     {
         return AccommodationTypeInfolist::configure($schema);
-    }
+    }*/
 
     public static function table(Table $table): Table
     {

@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Accommodation extends Model
 {
+    use HasFactory;
+
     protected $guarded = [];
 
     protected function casts(): array
@@ -23,6 +26,12 @@ class Accommodation extends Model
             return asset('assets/images/fallback.png');
         }
         return asset('storage/' . $this->cover_image);
+    }
+
+    // gallery urls attribute
+    public function getGalleryUrlsAttribute(): array
+    {
+        return collect($this->gallery)->map(fn($image) => asset('storage/' . $image))->toArray();
     }
     public function accommodationType(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

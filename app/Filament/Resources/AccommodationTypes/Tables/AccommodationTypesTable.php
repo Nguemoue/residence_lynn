@@ -20,7 +20,7 @@ class AccommodationTypesTable
                 TextColumn::make('name')->searchable(),
                 TextColumn::make('price_per_night')->money(),
                 IconColumn::make('is_available')->boolean(),
-                TextColumn::make('description')->limit(30)->searchable(),
+                TextColumn::make('services.name')->listWithLineBreaks()->limitList(2)->expandableLimitedList(),
                 TextColumn::make('created_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
             ])
@@ -38,6 +38,8 @@ class AccommodationTypesTable
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ])->defaultCurrency(defaultCurrency());
+            ])
+            ->recordUrl(null)
+            ->defaultCurrency(defaultCurrency());
     }
 }

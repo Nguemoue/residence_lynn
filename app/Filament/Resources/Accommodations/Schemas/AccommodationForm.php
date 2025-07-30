@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Accommodations\Schemas;
 
+use App\Models\AccommodationType;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
@@ -20,9 +21,7 @@ class AccommodationForm
         return $schema
             ->components([
                 TextInput::make('code')->required(),
-                Select::make('accommodation_type_id')->relationship('accommodationType', 'name')->preload()->native(false)->required(),
-                TextInput::make('price_per_night')->required()->numeric()->prefix(defaultCurrency()),
-                Toggle::make('is_available')->required(),
+                Select::make('accommodation_type_id')->relationship('accommodationType', 'name')->required(),
                 RichEditor::make('description')->columnSpanFull()->required(),
 
                 Section::make("Supplements")->collapsible()->schema([

@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Services\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
@@ -16,8 +17,8 @@ class ServicesTable
     {
         return $table
             ->columns([
-                TextColumn::make('name')
-                    ->searchable(),
+                TextColumn::make('name')->searchable(),
+                TextColumn::make('description')->searchable()->limit(),
                 ImageColumn::make('cover_image'),
                 TextColumn::make('created_at')
                     ->dateTime()
@@ -34,6 +35,7 @@ class ServicesTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

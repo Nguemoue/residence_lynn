@@ -15,9 +15,11 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('slug')->unique();
             $table->string('cover_image')->nullable();
+            $table->json('gallery')->nullable();
+            $table->json('amenities')->nullable();
+            $table->boolean('is_available')->default(true);
             $table->string('description');
             $table->float('price_per_night');
-            $table->boolean('is_available');
             $table->timestamps();
         });
     }

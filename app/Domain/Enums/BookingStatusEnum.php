@@ -9,20 +9,22 @@ use Filament\Support\Contracts\HasLabel;
 use Illuminate\Contracts\Support\Htmlable;
 
 enum BookingStatusEnum: string implements HasLabel , HasColor {
-    case APPROVED = 'paid';
+    case APPROVED = 'approved';
     case  PENDING = 'pending';
-    case REJECTED = 'rejected';
     case CANCELLED = 'cancelled';
 
 
 
     public function label(): string
     {
-        return $this->name;
+        return __($this->name);
     }
     public function badgeColor(): string
     {
         return match ($this){
+            self::PENDING => 'badge-warning',
+            self::CANCELLED => 'badge-danger',
+            self::APPROVED => 'badge-success',
             default=>'badge-primary'
         };
 
@@ -37,8 +39,7 @@ enum BookingStatusEnum: string implements HasLabel , HasColor {
     {
         return match ($this) {
             self::PENDING => 'gray',
-            self::CANCELLED => 'gray',
-            self::REJECTED => 'warning',
+            self::CANCELLED => 'warning',
             self::APPROVED => 'success',
         };
     }

@@ -21,7 +21,7 @@ class PostResource extends Resource
     protected static ?string $model = Post::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::MapPin;
-    protected static string | UnitEnum | null $navigationGroup = FilamentNavigationGroupEnum::BLOG;
+    protected static string | UnitEnum | null $navigationGroup = FilamentNavigationGroupEnum::Blog;
 
     public static function getNavigationLabel(): string
     {

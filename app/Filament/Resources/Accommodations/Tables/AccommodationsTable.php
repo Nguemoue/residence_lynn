@@ -17,13 +17,12 @@ class AccommodationsTable
     {
         return $table
             ->columns([
-                TextColumn::make('code')->searchable(),
-                TextColumn::make('accommodationType.name')->sortable(),
-                TextColumn::make('price')->money(),
-                ImageColumn::make('cover_image')->disk('public'),
-                IconColumn::make('is_available')->boolean(),
-                TextColumn::make('created_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('code')->searchable()->translateLabel(),
+                TextColumn::make('accommodationType.name')->sortable()->translateLabel(),
+                TextColumn::make('price')->money()->translateLabel(),
+                ImageColumn::make('cover_image')->disk('public')->translateLabel(),
+                IconColumn::make('is_available')->boolean()->translateLabel(),
+                TextColumn::make('created_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true)->translateLabel(),
             ])
             ->filters([
                 //
@@ -36,6 +35,7 @@ class AccommodationsTable
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ])->defaultCurrency(defaultCurrency());
+            ])->defaultCurrency(defaultCurrency())
+            ->defaultDateDisplayFormat(defaultDisplayFormatDate());
     }
 }

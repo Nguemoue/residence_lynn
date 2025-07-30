@@ -259,5 +259,17 @@
     "instagramUrl": "Lien Instagram",
     "twitterUrl": "Lien Twitter",
     "whatsappUrl": "Numero whatsapp",
-    "whatsappText": "Texte whatsapp a envoyer"
+    "whatsappText": "Texte whatsapp a envoyer",
+    "Start date": "Date de debut",
+    "End date": "Date de fin",
+    "Accommodation type": "Type de logement",
+    "Accommodation": "Logement",
+    "status": "Statut",
+    "Guest number": "Nombre d'invites",
+    "Guest": "Invite",
+    "Guest name": "Nom de l'invite",
+    "Guest email": "Email de l'invite",
+    "Guest phone": "Telephone de l'invite",
+    "Guest address": "Adresse de l'invite"
+
 }

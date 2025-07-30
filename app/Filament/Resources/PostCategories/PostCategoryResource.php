@@ -22,7 +22,7 @@ class PostCategoryResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::Folder;
 
-    protected static string | UnitEnum | null $navigationGroup = FilamentNavigationGroupEnum::BLOG;
+    protected static string | UnitEnum | null $navigationGroup = FilamentNavigationGroupEnum::Blog;
     public static function getNavigationLabel(): string
     {
         return __('menu.post_categories');

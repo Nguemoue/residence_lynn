@@ -21,7 +21,7 @@ class SubscriberResource extends Resource
     protected static ?string $model = Subscriber::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::Newspaper;
-    protected static string | UnitEnum | null $navigationGroup = FilamentNavigationGroupEnum::ADMINISTRATION;
+    protected static string | UnitEnum | null $navigationGroup = FilamentNavigationGroupEnum::Administration;
 
     public static function getNavigationLabel(): string
     {

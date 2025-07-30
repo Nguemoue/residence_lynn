@@ -23,7 +23,9 @@ class AccommodationResource extends Resource
     protected static ?string $model = Accommodation::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-    protected static string | UnitEnum | null $navigationGroup = FilamentNavigationGroupEnum::ACCOMMODATION;
+    protected static string | UnitEnum | null $navigationGroup = FilamentNavigationGroupEnum::Reservation;
+
+    protected static ?string $label = "Logement";
 
     public static function form(Schema $schema): Schema
     {

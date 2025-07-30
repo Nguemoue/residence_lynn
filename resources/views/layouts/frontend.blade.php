@@ -26,7 +26,7 @@
     @stack('styles')
     <style>
         .hero-image{
-            background-image: url('{{ asset('assets/hero.jpg') }}');
+            background-image: url('{{ asset('assets/images/room2.jpg') }}');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: -10% 0;

@@ -18,6 +18,7 @@ class GeneralSetting extends Settings
     public string $twitterUrl = '';
     public string $instagramUrl = '';
     public string $whatsappUrl = '';
+    public string $mapLink = '';
 
     public static function group(): string
     {

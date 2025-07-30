@@ -8,7 +8,8 @@
 
 @section('content')
     {{-- HERO ------------------------------------------------------------------}}
-    <section class="hero min-h-[40vh] hero-image">
+    <section class="hero min-h-[60vh] bg-cover bg-center"
+             style="background-image: url({{ asset('assets/images/room3.jpg') }});">
         <div class="hero-overlay bg-black/50"></div>
         <div class="hero-content text-center text-neutral-content">
             <div class="max-w-lg">

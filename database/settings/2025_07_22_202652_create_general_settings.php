@@ -13,6 +13,7 @@ return new class extends SettingsMigration
         $this->migrator->add('general.support',config('project.about.support'));
         $this->migrator->add('general.companyNumber',config('project.about.company_number'));
         $this->migrator->add('general.address',config('project.about.address'));
+        $this->migrator->add('general.mapLink',config('project.about.mapLink'));
         //sociale link
         $this->migrator->add('general.facebookUrl',config('project.socials.facebook'));
         $this->migrator->add('general.instagramUrl',config('project.socials.instagram'));

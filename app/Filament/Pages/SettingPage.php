@@ -40,6 +40,7 @@ class SettingPage extends Page
             'instagramUrl' => app(GeneralSetting::class)->instagramUrl,
             'twitterUrl' => app(GeneralSetting::class)->twitterUrl,
             'whatsappUrl' => app(GeneralSetting::class)->whatsappUrl,
+            'mapLink' => app(GeneralSetting::class)->mapLink,
         ];
     }
 
@@ -60,6 +61,7 @@ class SettingPage extends Page
                 TextInput::make('address')->translateLabel(),
                 TextInput::make('phoneNumber')->translateLabel(),
                 TextInput::make('companyNumber')->translateLabel(),
+                TextInput::make('mapLink')->translateLabel()->url()->prefixIcon(Heroicon::Link),
             ])->columns(2)->collapsible(),
             Section::make("Liens sociaux")->schema([
                 ...$socialeSchemas

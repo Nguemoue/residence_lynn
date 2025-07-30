@@ -15,7 +15,6 @@ class EditAccommodationType extends EditRecord
     {
         return [
             ViewAction::make(),
-            DeleteAction::make(),
         ];
     }
 }

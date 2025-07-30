@@ -14,8 +14,9 @@
     <!-- Including GSAP, Swiper, and Alpine.js -->
 
     <!-- HERO Section -->
-    <section class="hero min-h-[70vh] hero-image bg-cover bg-center relative overflow-hidden" style="background-image: url('{{ asset('assets/images/kribi-accommodation.jpg') }}');">
-        <div class="hero-overlay bg-black/70 absolute inset-0"></div>
+    <section class="hero min-h-[60vh] bg-cover bg-center"
+             style="background-image: url({{ asset('assets/images/room2.jpg') }});">
+        <div class="hero-overlay bg-black/50"></div>
         <div class="hero-content text-center text-neutral-content relative z-10">
             <div class="max-w-3xl mx-auto px-4">
                 <h1 class="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg animate-fade-in">Quel logement pour votre séjour à Kribi ?</h1>
@@ -31,8 +32,8 @@
             <h2 class="text-4xl font-bold text-center text-primary mb-12 animate-fade-in">Nos Types de Logements</h2>
             <div class="space-y-12">
                 @foreach($accommodationTypes as $index => $type)
-                    <div x-data="{ isOpen: false }" class="accommodation-card bg-base-200 rounded-xl  transition-all duration-500 hover:shadow-3xl opacity-0"
-                         data-gsap="fade-up" data-delay="{{ $index * 0.2 }}">
+                    <div x-data="{ isOpen: false }" class="accommodation-card bg-base-200 rounded-xl  transition-all duration-200 hover:shadow-3xl opacity-0"
+                         data-gsap="fade-up" data-delay="{{ $index * 0.1 }}">
                         <!-- Accommodation Type Header -->
                         <div class="flex flex-col lg:flex-row">
                             <!-- Image Carousel -->
@@ -44,8 +45,8 @@
                                                  class="w-full h-full object-cover">
                                         </div>
                                         <!-- Add more images if available -->
-                                        @if($type->gallery)
-                                            @foreach($type->gallery as $image)
+                                        @if($type->gallery_urls)
+                                            @foreach($type->gallery_urls as $image)
                                                 <div class="swiper-slide">
                                                     <img src="{{ $image }}" alt="{{ $type->name }} - Image"
                                                          class="w-full h-full object-cover">
@@ -77,12 +78,12 @@
                                 @endif
 
                                 <!-- Amenities -->
-                                @if($type->amenities->count())
+                                @if($type->amenities)
                                     <div class="mb-6">
                                         <h4 class="font-semibold text-lg text-base-content">Commodités :</h4>
                                         <ul class="list-disc list-inside text-sm opacity-80 space-y-1">
                                             @foreach($type->amenities as $amenity)
-                                                <li>{{ $amenity->name }}</li>
+                                                <li>{{ $amenity }}</li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -95,8 +96,8 @@
 
                                 <!-- Actions -->
                                 <div class="flex flex-wrap gap-4">
-                                    <a href="{{ route('accommodation_types.show', $type->slug) }}"
-                                       class="btn btn-outline btn-primary btn-sm hover:scale-105 transition-transform">Reservez</a>
+                                    <a href="{{ route('accommodation_types.show', $type) }}" class="btn btn-outline btn-secondary btn-sm hover:scale-105 transition-transform">Details</a>
+                                    <a href="{{ route('checkout.create', $type) }}" class="btn btn-outline btn-primary btn-sm hover:scale-105 transition-transform">Reservez</a>
                                     <button @click="isOpen = !isOpen"
                                             class="btn btn-ghost btn-sm"
                                             :class="{ 'btn-active': isOpen }">

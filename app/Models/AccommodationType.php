@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Storage;
 
 class AccommodationType extends Model
 {
@@ -33,19 +34,14 @@ class AccommodationType extends Model
     public function getCoverImageUrlAttribute(): string
     {
         //if the cover image doesn't exist render the fallback image
-        if ($this->cover_image === null or \Storage::disk('public')->exists($this->cover_image)) {
+        if ($this->cover_image === null or !\Storage::disk('public')->exists($this->cover_image)) {
             return asset('assets/images/fallback.png');
         }
-        return asset('storage/' . $this->cover_image);
+        return Storage::disk('public')->url($this->cover_image);
+    }
+    public function getGalleryUrlsAttribute(): array
+    {
+        return collect($this->gallery)->map(fn($image) => asset('storage/' . $image))->toArray();
     }
 
-    //custon attribute for amenities
-    public function getAmenitiesAttribute(): Collection
-    {
-        return collect([]);
-    }
-    public function getGalleryAttribute(): Collection
-    {
-        return collect([]);
-    }
 }

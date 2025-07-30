@@ -69,13 +69,7 @@
                     © {{ now()->year }}, {{ app(\App\Settings\GeneralSetting::class)->name }}. Tous droits réservés.
                     Propulsé par <a class="link text-primary" href="{{ config('project.powered_by.link') }}" target="_blank">{{ config('project.powered_by.company_name') }}</a>
                 </p>
-                <div class="flex flex-wrap justify-center lg:justify-end gap-2 text-xs">
-                    <span class="badge badge-outline">Visa</span>
-                    <span class="badge badge-outline">Mastercard</span>
-                    <span class="badge badge-outline">PayPal</span>
-                    <span class="badge badge-outline">MTN Mobile Money</span>
-                    <span class="badge badge-outline">Orange Money</span>
-                </div>
+
             </div>
         </div>
     </div>

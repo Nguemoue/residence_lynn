@@ -6,7 +6,8 @@
 @section('content')
 
     {{-- HERO --}}
-    <section class="hero min-h-[80vh] bg-cover bg-center hero-image animate__animated animate__fadeIn" style="background-image: url('{{ asset('assets/images/banner_price.jpg') }}');">
+    <section class="hero min-h-[80vh] bg-cover bg-center hero-image animate__animated animate__fadeIn"
+             style="background-image: url('{{ asset('assets/images/banner_price.jpg') }}');">
         <div class="hero-overlay bg-black/60"></div>
         <div class="hero-content text-center text-neutral-content">
             <div class="max-w-2xl">
@@ -97,7 +98,7 @@
                         </figure>
                         <div class="card-body">
                             <h3 class="card-title text-lg font-semibold">{{ $type->name }}</h3>
-                            <p class="text-sm line-clamp-3">{{ $type->description }}</p>
+                            <p class="text-sm line-clamp-3">{!!  $type->description  !!}</p>
                             <a href="{{ route('accommodation_types.show', $type->slug) }}" class="btn btn-sm btn-primary mt-4">Voir les {{ $type->name }}</a>
                         </div>
                     </div>

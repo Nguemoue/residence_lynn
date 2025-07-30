@@ -81,9 +81,8 @@
 
 @section('content')
     <!-- HERO Section -->
-    <section class="hero min-h-[60vh] bg-cover bg-center relative overflow-hidden"
-             style="background-image: url({{ asset($type->cover_image_url) }});">
-        <div class="hero-overlay bg-black/70 absolute inset-0"></div>
+    <section class="hero min-h-[60vh] bg-cover bg-center" style="background-image: url({{ asset('assets/images/room2.jpg') }});">
+        <div class="hero-overlay bg-black/50"></div>
         <div class="hero-content text-center text-neutral-content relative z-10">
             <div class="max-w-3xl mx-auto px-4">
                 <h1 class="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg text-lyan-gray">
@@ -92,7 +91,7 @@
                 <p class="text-lg md:text-xl opacity-90 mb-8">
                     Un logement pensé pour le confort et la sérénité à Kribi.
                 </p>
-                <a href="{{route('checkout.create',['accommodationType' => $type])}}" class="btn btn-primary btn-lg">Reservez maintenant</a>
+                <a href="{{route('checkout.create',['accommodationType' => $type])}}" class="btn btn-primary btn-lg">Faite une reservation</a>
             </div>
         </div>
     </section>
@@ -125,7 +124,7 @@
                             <h3 class="font-semibold text-lg mb-2 text-lyan-gray">Commodités :</h3>
                             <ul class="list-disc list-inside text-sm opacity-80">
                                 @foreach($type->amenities as $amenity)
-                                    <li>{{ $amenity->name }}</li>
+                                    <li>{{ $amenity }}</li>
                                 @endforeach
                             </ul>
                         </div>

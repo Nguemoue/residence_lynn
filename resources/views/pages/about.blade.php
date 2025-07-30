@@ -6,7 +6,8 @@
 
 @section('content')
     {{-- HERO ------------------------------------------------------------------}}
-    <section class="hero min-h-[50vh] hero-image" style="background-image: url('{{ asset('assets/images/kribi-header.jpg') }}');">
+    <section class="hero min-h-[60vh] bg-cover bg-center"
+             style="background-image: url({{ asset('assets/images/room1.jpg') }});">
         <div class="hero-overlay bg-black/50"></div>
         <div class="hero-content text-center text-neutral-content">
             <div class="max-w-2xl">

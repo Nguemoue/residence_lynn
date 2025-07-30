@@ -8,6 +8,7 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class AccommodationTypeForm
@@ -24,7 +25,16 @@ class AccommodationTypeForm
                 CheckboxList::make('services')->relationship('services', 'name')->columns(4)->columnSpanFull(),
                 RichEditor::make('description')->required()->columnSpanFull(),
                 TagsInput::make('amenities')->columnSpanFull(),
-                FileUpload::make('gallery')->image()->multiple()->required()->columnSpanFull()->columns(2),
+                Section::make('Gallery')
+                    ->description("Upload the cover image and gallery images for this accommodation type.")
+                    ->schema([
+                        FileUpload::make('cover_image')->imageEditor()
+                            ->imageCropAspectRatio("1:1")
+                            ->image()
+                            ->disk('public')->required()->columnSpanFull(),
+                        FileUpload::make('gallery')->image()->disk('public')->multiple()->required()->columnSpanFull()->columns(2),
+                    ])->columnSpanFull()
+
             ]);
     }
 }

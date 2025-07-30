@@ -6,7 +6,8 @@
 
 @section('content')
     {{-- HERO IMAGE --}}
-    <section class="hero min-h-[60vh] bg-cover bg-center" style="background-image: url('{{ $type->cover_image_url }}');">
+    <section class="hero min-h-[60vh] bg-cover bg-center"
+             style="background-image: url({{ asset('assets/images/room2.jpg') }});">
         <div class="hero-overlay bg-black/50"></div>
         <div class="hero-content text-center text-neutral-content">
             <div class="max-w-2xl animate__animated animate__fadeInDown">
@@ -36,12 +37,12 @@
                 @endif
 
                 {{-- Commodités --}}
-                @if($type->amenities->count())
+                @if($type->amenities)
                     <div class="mt-6">
                         <h3 class="font-semibold text-lg mb-2">Commodités :</h3>
                         <ul class="list-disc list-inside text-sm opacity-80">
                             @foreach($type->amenities as $amenity)
-                                <li>{{ $amenity->name }}</li>
+                                <li>{{ $amenity }}</li>
                             @endforeach
                         </ul>
                     </div>

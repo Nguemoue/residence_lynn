@@ -82,7 +82,7 @@
 @section('content')
     <!-- HERO Section -->
     <section class="hero min-h-[60vh] bg-cover bg-center relative overflow-hidden"
-             style="background-image: url({{ asset('assets/hero.jpg') }});">
+             style="background-image: url({{ asset('assets/images/room1.jpg') }});">
         <div class="hero-overlay bg-black/70 absolute inset-0"></div>
         <div class="hero-content text-center text-neutral-content relative z-10">
             <div class="max-w-3xl mx-auto px-4">
@@ -92,7 +92,6 @@
                 <p class="text-lg md:text-xl opacity-90 mb-8">
                     Découvrez nos plus belles images de Kribi.
                 </p>
-                <a href="#gallery-section" class="btn btn-primary btn-lg">Voir la galerie</a>
             </div>
         </div>
     </section>

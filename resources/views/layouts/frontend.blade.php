@@ -30,7 +30,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: -10% 0;
-            aspect-ratio: 16/2;
+            aspect-ratio: 16/7;
         }
     </style>
 </head>

@@ -6,10 +6,11 @@
 
 @section('content')
     {{-- HERO ------------------------------------------------------------------}}
-    <section class="hero min-h-[40vh] hero-image" >
+    <section class="hero min-h-[60vh] bg-cover bg-center"
+             style="background-image: url({{ asset('assets/images/room2.jpg') }});">
         <div class="hero-overlay bg-black/50"></div>
         <div class="hero-content text-center text-neutral-content">
-            <div class="max-w-xl">
+            <div class="max-w-2xl">
                 <h1 class="text-5xl font-bold mb-4">Le blog Noveden</h1>
                 <p class="opacity-90">Conseils d'expert·e·s, astuces naturelles et actualités pour révéler votre beauté.</p>
                 <div class="mt-6 h-1 w-24 bg-primary mx-auto rounded-full"></div>

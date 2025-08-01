@@ -2,9 +2,9 @@
 <html lang="fr" data-theme="light">
 <head>
     <meta charset="utf-8">
-    <title>@yield('title', 'Noveden – Beauté naturelle')</title>
+    <title>@yield('title', config('ap.name').' – Site')</title>
     <meta name="description"
-          content="@yield('meta-description', 'Cosmétiques capillaires & compléments naturels Noveden')">
+          content="@yield('meta-description','Site de réservation de chambres,studios et appartements meublées ')">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{-- Google Fonts : Inter --}}

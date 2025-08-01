@@ -53,7 +53,7 @@ final class Post extends Model
             'id' => 1,
             'name'=>"Admin",
             'avatar'=>'https://placehold.net/default.png',
-            'email'=>'admin@noveden.com'
+            'email'=>'admin@gmail.com'
         ]);
     }
     public function tags(): BelongsToMany

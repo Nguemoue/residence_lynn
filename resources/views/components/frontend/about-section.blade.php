@@ -1,11 +1,11 @@
 <section id="about" class="py-16 bg-base-200">
     <div class="container mx-auto px-4">
         <div class="text-center mb-10">
-            <h2 class="text-3xl font-bold text-primary">Noveden – Beauté naturelle pour toutes</h2>
+            <h2 class="text-3xl font-bold text-primary">{{config('app.name')}} - A Propos</h2>
             <p class="text-base-content max-w-2xl mx-auto mt-4">
-                Prenez soin de vos cheveux, de votre peau et de votre bien‑être avec nos produits naturels
-                pensés pour les femmes, les enfants et tous les types de beauté. Des soins capillaires aux
-                compléments, Noveden vous accompagne avec passion.
+                {{-- site de reservation de locaux meuble --}}
+                Découvrez notre sélection de logements spacieux et bien équipés, et
+                laissez-nous vous guider vers une expérience de séjour inoubliable.
             </p>
         </div>
 

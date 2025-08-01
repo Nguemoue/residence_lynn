@@ -35,11 +35,12 @@
                 </label>
                 <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[60] p-2 shadow bg-base-100 rounded-box w-[70vw] text-center">
                     <li><a href="{{ route('home') }}">Accueil</a></li>
-                    <li><a href="{{ route('accommodation_types.index') }}">Produits</a></li>
-                    <li><a href="{{ route('about.show') }}">Reservation</a></li>
+                    <li><a href="{{ route('accommodation_types.index') }}">Reservation</a></li>
+                    <li><a href="{{ route('about.show') }}">A propos</a></li>
                     <li><a href="{{ route('blog.index') }}">Blog</a></li>
                     <li><a href="{{ route('faq.index') }}">FAQ</a></li>
                     <li><a href="{{ route('contact.create') }}">Contact</a></li>
+                    <li><a href="{{ route('gallery.index') }}">Gallerie</a></li>
                 </ul>
             </div>
         </div>

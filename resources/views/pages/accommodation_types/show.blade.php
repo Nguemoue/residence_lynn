@@ -119,7 +119,7 @@
                     @endif
 
                     <!-- Amenities -->
-                    @if(count($type->amenities))
+                    @if(($type->amenities))
                         <div class="mt-6">
                             <h3 class="font-semibold text-lg mb-2 text-lyan-gray">Commodités :</h3>
                             <ul class="list-disc list-inside text-sm opacity-80">

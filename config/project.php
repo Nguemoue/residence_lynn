@@ -20,44 +20,6 @@ return [
         'whatsapp' => '',
     ],
 
-    'timelines' => [
-        [
-            'order' => 1,
-            'year' => 2020,
-            'title' => "L’idée germe",
-            'description' => "Notre fondatrice, Aïssa, élabore un masque capillaire maison pour sauver ses boucles. Une révélation qui marque le début de l’aventure."
-        ],
-        [
-            'order' => 2,
-            'year' => 2021,
-            'title' => "Lancement de Noveden",
-            'description' => "Mise en ligne de la boutique officielle. Plus de 1 000 premières commandes en quelques semaines. La nature trouve sa voix."
-        ],
-        [
-            'order' => 3,
-            'year' => 2022,
-            'title' => "Premiers partenariats éthiques",
-            'description' => "Collaboration avec des coopératives locales pour la récolte durable des plantes ayurvédiques et des actifs végétaux."
-        ],
-        [
-            'order' => 4,
-            'year' => 2023,
-            'title' => "50 000 clientes engagées",
-            'description' => "La communauté #Noveden s’épanouit : plus de 50 000 femmes partagent leurs routines et témoignages de beauté naturelle."
-        ],
-        [
-            'order' => 5,
-            'year' => 2024,
-            'title' => "Création du labo R&D interne",
-            'description' => "Un pôle scientifique est lancé pour développer des compléments capillaires de nouvelle génération, toujours 100% naturels."
-        ],
-        [
-            'order' => 6,
-            'year' => 2025,
-            'title' => "Vers l'international",
-            'description' => "Déploiement progressif des produits Noveden en Europe francophone. Premiers revendeurs partenaires en Belgique et en Suisse."
-        ],
-    ],
 
     'accommodation_types'=>[
         [
@@ -80,8 +42,9 @@ return [
         ],
     ],
     'powered_by'=>[
-        'company_name'=>"GoulBam Enterprises",
-        "link"=>"https://goulbam.com"
+        'company_name'=>"Nguemoue",
+        //wa.me with message Bonjour j'ai besoin d'un suivi
+        "link"=>"https://wa.me/237699568073/?text=Bonjour%20j'ai%20besoin%20d'un%20suivi"
     ],
     'services'=>[
         ['name' => 'Piscine', 'description' => 'Piscine extérieure pour détente et loisirs', 'cover_image' => 'piscine.jpg'],
